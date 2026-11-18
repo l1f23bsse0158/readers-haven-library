@@ -452,3 +452,64 @@ img {
 
 }
 
+
+
+/* ---------- Collections page (Member 1) ---------- */
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.collection {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+}
+
+.collection-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.collection-head h2 {
+  font-size: 1.375rem;
+}
+
+.collection-head .mono {
+  color: var(--accent);
+}
+
+.collection-note {
+  margin-top: 12px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.titles {
+  display: grid;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.titles li {
+  display: grid;
+  gap: 2px;
+}
+
+.titles cite {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+}
+
+.titles span {
+  color: var(--ink-3);
+  font-size: 0.9375rem;
+}
