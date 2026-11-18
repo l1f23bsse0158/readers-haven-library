@@ -429,3 +429,26 @@ img {
   color: var(--accent);
 }
 
+
+@media (max-width: 860px) {
+  .hero,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .page-links a {
+    grid-template-columns: 1fr auto;
+  }
+
+  .page-links p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+}
+
