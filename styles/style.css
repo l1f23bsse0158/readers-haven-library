@@ -1,0 +1,308 @@
+/* ==========================================================
+   Readers' Haven shared stylesheet
+   Every page in src/ links here with ../styles/style.css
+   Each block below belongs to one team member. Add your own
+   styles inside your own block only, and use the color
+   variables from :root (never type a hex color), so dark
+   mode works on every page.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ---------- Base: colors, type, header, footer (Team Lead) ---------- */
+
+:root {
+  --bg: #f3f5f2;
+  --surface: #fbfcfa;
+  --ink: #17201b;
+  --ink-2: #48534c;
+  --ink-3: #5f6a63;
+  --line: rgba(23, 32, 27, 0.1);
+  --line-strong: rgba(23, 32, 27, 0.28);
+  --accent: #1d5c45;
+  --on-accent: #f6faf7;
+  --accent-soft: #e2ebe5;
+  --header-bg: rgba(243, 245, 242, 0.82);
+  --r-control: 8px;
+  --r-card: 12px;
+  --max: 1152px;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --display: "Libre Caslon Display", Georgia, "Times New Roman", serif;
+  --serif: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  color-scheme: light dark;
+}
+
+/* Dark mode follows the visitor's system setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121714;
+    --surface: #19201c;
+    --ink: #e5ebe7;
+    --ink-2: #b0bab3;
+    --ink-3: #8f9a93;
+    --line: rgba(229, 235, 231, 0.1);
+    --line-strong: rgba(229, 235, 231, 0.28);
+    --accent: #84c7a5;
+    --on-accent: #0f1a14;
+    --accent-soft: #1d2a23;
+    --header-bg: rgba(18, 23, 20, 0.82);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings use Caslon, the classic book typeface */
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(100% - 32px, var(--max));
+  margin-inline: auto;
+}
+
+/* Library data (shelves, times, prices) is set in mono */
+.mono {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Header: a translucent bar that page content scrolls under */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 64px;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: var(--r-control);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 150ms var(--ease), color 150ms var(--ease);
+}
+
+.nav a:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.nav a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Title area at the top of the four inner pages */
+.page-head {
+  padding-block: 64px 32px;
+}
+
+.page-head h1 {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  letter-spacing: -0.01em;
+}
+
+.page-head p {
+  margin-top: 12px;
+  max-width: 60ch;
+  color: var(--ink-2);
+  font-size: 1.125rem;
+}
+
+/* One wide photo under the title of each inner page */
+.page-photo img {
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  object-fit: cover;
+  border-radius: var(--r-card);
+  background: var(--line);
+}
+
+.section {
+  padding-block: 40px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: var(--r-control);
+  background: var(--accent);
+  color: var(--on-accent);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms var(--ease), color 150ms var(--ease), transform 100ms var(--ease);
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+/* Respond the moment the button is pressed */
+.button:active {
+  transform: scale(0.98);
+}
+
+.button--quiet {
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button--quiet:hover {
+  background: var(--surface);
+  filter: none;
+}
+
+.site-footer {
+  margin-top: 64px;
+  padding-block: 32px 40px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-block: 12px 8px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    margin-inline: -12px;
+  }
+
+  .page-head {
+    padding-top: 40px;
+  }
+
+  .page-photo img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* Calmer fallbacks for visitors who ask for them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background: var(--bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

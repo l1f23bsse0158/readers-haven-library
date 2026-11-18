@@ -1,0 +1,11 @@
+# Installed packages and build output
+node_modules/
+dist/
+.parcel-cache/
+
+# Secrets
+.env
+
+# Operating system files
+.DS_Store
+Thumbs.db
