@@ -582,3 +582,52 @@ img {
   font-family: var(--mono);
 }
 
+
+/* On phones each row shows all three plans side by side */
+@media (max-width: 640px) {
+  .plans-table,
+  .plans-table tbody,
+  .plans-table th,
+  .plans-table td {
+    display: block;
+    min-width: 0;
+  }
+
+  .plans-table thead {
+    display: none;
+  }
+
+  .plans-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .plans-table tbody tr:first-child {
+    border-top: 0;
+  }
+
+  .plans-table th,
+  .plans-table td {
+    padding: 0;
+    font-size: 0.9375rem;
+  }
+
+  .plans-table tbody th {
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  .plans-table td::before {
+    content: attr(data-plan);
+    display: block;
+    color: var(--ink-3);
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+  }
+
+  .plan-fee {
+    font-size: 1rem;
+  }
+}
