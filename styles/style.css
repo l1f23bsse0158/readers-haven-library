@@ -699,3 +699,18 @@ img {
 .feedback-form .button {
   justify-self: start;
 }
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .feedback-form {
+    padding: 20px;
+  }
+
+  .feedback-form .button {
+    justify-self: stretch;
+  }
+}
