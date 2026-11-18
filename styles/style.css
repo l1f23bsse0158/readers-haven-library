@@ -513,3 +513,10 @@ img {
   color: var(--ink-3);
   font-size: 0.9375rem;
 }
+
+
+@media (max-width: 720px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+}
