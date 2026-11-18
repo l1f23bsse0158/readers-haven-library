@@ -520,3 +520,114 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ---------- Membership page (Member 2) ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+
+.plans-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.plans-table th,
+.plans-table td {
+  padding: 16px 20px;
+  vertical-align: top;
+}
+
+.plans-table thead th {
+  padding-top: 24px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.plans-table tbody tr {
+  border-top: 1px solid var(--line);
+}
+
+.plans-table tbody th {
+  width: 22%;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.plan-fee {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.rules {
+  display: grid;
+  gap: 12px;
+  max-width: 64ch;
+  padding-left: 24px;
+  list-style: decimal;
+}
+
+.rules li::marker {
+  color: var(--accent);
+  font-family: var(--mono);
+}
+
+
+/* On phones each row shows all three plans side by side */
+@media (max-width: 640px) {
+  .plans-table,
+  .plans-table tbody,
+  .plans-table th,
+  .plans-table td {
+    display: block;
+    min-width: 0;
+  }
+
+  .plans-table thead {
+    display: none;
+  }
+
+  .plans-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .plans-table tbody tr:first-child {
+    border-top: 0;
+  }
+
+  .plans-table th,
+  .plans-table td {
+    padding: 0;
+    font-size: 0.9375rem;
+  }
+
+  .plans-table tbody th {
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  .plans-table td::before {
+    content: attr(data-plan);
+    display: block;
+    color: var(--ink-3);
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+  }
+
+  .plan-fee {
+    font-size: 1rem;
+  }
+}
