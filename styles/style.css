@@ -631,3 +631,50 @@ img {
     font-size: 1rem;
   }
 }
+
+
+
+/* ---------- Digital services page (Member 3) ---------- */
+
+.service-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  padding-block: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.service h2 {
+  font-size: 1.375rem;
+}
+
+.service .mono {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+.steps {
+  display: grid;
+  gap: 8px;
+  counter-reset: step;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  counter-increment: step;
+  color: var(--ink-2);
+}
+
+.steps li::before {
+  content: counter(step);
+  color: var(--ink-3);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  line-height: 1.85;
+}
