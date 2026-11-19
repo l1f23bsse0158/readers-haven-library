@@ -306,3 +306,463 @@ img {
     backdrop-filter: none;
   }
 }
+
+
+
+/* ---------- Home page (Team Lead) ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+  padding-block: 56px 40px;
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.75rem, 5.6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  max-width: 44ch;
+  color: var(--ink-2);
+  font-size: 1.1875rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--r-card);
+  background: var(--line);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about p {
+  max-width: 60ch;
+  color: var(--ink-2);
+}
+
+.about p + p {
+  margin-top: 12px;
+}
+
+.hours {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+}
+
+.hours h2 {
+  margin-bottom: 12px;
+  font-size: 1.125rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 8px;
+}
+
+.hours-row + .hours-row {
+  border-top: 1px solid var(--line);
+}
+
+.hours-row dd {
+  color: var(--ink-2);
+}
+
+.hours-address {
+  margin-top: 16px;
+  color: var(--ink-3);
+  font-size: 0.9375rem;
+}
+
+.page-links {
+  border-bottom: 1px solid var(--line);
+}
+
+.page-links a {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 20px 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 150ms var(--ease);
+}
+
+.page-links a:hover {
+  background: var(--surface);
+}
+
+.page-links h3 {
+  font-size: 1.375rem;
+}
+
+.page-links p {
+  color: var(--ink-2);
+}
+
+.page-links .mono {
+  color: var(--accent);
+}
+
+
+@media (max-width: 860px) {
+  .hero,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .page-links a {
+    grid-template-columns: 1fr auto;
+  }
+
+  .page-links p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+}
+
+
+
+/* ---------- Collections page (Member 1) ---------- */
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.collection {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+}
+
+.collection-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.collection-head h2 {
+  font-size: 1.375rem;
+}
+
+.collection-head .mono {
+  color: var(--accent);
+}
+
+.collection-note {
+  margin-top: 12px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.titles {
+  display: grid;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.titles li {
+  display: grid;
+  gap: 2px;
+}
+
+.titles cite {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+}
+
+.titles span {
+  color: var(--ink-3);
+  font-size: 0.9375rem;
+}
+
+
+@media (max-width: 720px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Membership page (Member 2) ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+
+.plans-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.plans-table th,
+.plans-table td {
+  padding: 16px 20px;
+  vertical-align: top;
+}
+
+.plans-table thead th {
+  padding-top: 24px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.plans-table tbody tr {
+  border-top: 1px solid var(--line);
+}
+
+.plans-table tbody th {
+  width: 22%;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.plan-fee {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.rules {
+  display: grid;
+  gap: 12px;
+  max-width: 64ch;
+  padding-left: 24px;
+  list-style: decimal;
+}
+
+.rules li::marker {
+  color: var(--accent);
+  font-family: var(--mono);
+}
+
+
+/* On phones each row shows all three plans side by side */
+@media (max-width: 640px) {
+  .plans-table,
+  .plans-table tbody,
+  .plans-table th,
+  .plans-table td {
+    display: block;
+    min-width: 0;
+  }
+
+  .plans-table thead {
+    display: none;
+  }
+
+  .plans-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .plans-table tbody tr:first-child {
+    border-top: 0;
+  }
+
+  .plans-table th,
+  .plans-table td {
+    padding: 0;
+    font-size: 0.9375rem;
+  }
+
+  .plans-table tbody th {
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  .plans-table td::before {
+    content: attr(data-plan);
+    display: block;
+    color: var(--ink-3);
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+  }
+
+  .plan-fee {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* ---------- Digital services page (Member 3) ---------- */
+
+.service-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  padding-block: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.service h2 {
+  font-size: 1.375rem;
+}
+
+.service .mono {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+.steps {
+  display: grid;
+  gap: 8px;
+  counter-reset: step;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  counter-increment: step;
+  color: var(--ink-2);
+}
+
+.steps li::before {
+  content: counter(step);
+  color: var(--ink-3);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  line-height: 1.85;
+}
+
+@media (max-width: 760px) {
+  .service {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+/* ---------- Contact page (Member 4) ---------- */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 24px;
+}
+
+.contact-list dt {
+  margin-bottom: 4px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.feedback-form {
+  display: grid;
+  gap: 8px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+}
+
+.feedback-form h2 {
+  font-size: 1.375rem;
+}
+
+.form-note {
+  margin-bottom: 12px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.feedback-form label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-control);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  transition: border-color 150ms var(--ease);
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.feedback-form .button {
+  justify-self: start;
+}
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .feedback-form {
+    padding: 20px;
+  }
+
+  .feedback-form .button {
+    justify-self: stretch;
+  }
+}
