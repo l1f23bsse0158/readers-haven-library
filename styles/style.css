@@ -678,3 +678,10 @@ img {
   font-size: 0.875rem;
   line-height: 1.85;
 }
+
+@media (max-width: 760px) {
+  .service {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
