@@ -631,3 +631,86 @@ img {
     font-size: 1rem;
   }
 }
+
+
+/* ---------- Contact page (Member 4) ---------- */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 24px;
+}
+
+.contact-list dt {
+  margin-bottom: 4px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.feedback-form {
+  display: grid;
+  gap: 8px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+}
+
+.feedback-form h2 {
+  font-size: 1.375rem;
+}
+
+.form-note {
+  margin-bottom: 12px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.feedback-form label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-control);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  transition: border-color 150ms var(--ease);
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.feedback-form .button {
+  justify-self: start;
+}
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .feedback-form {
+    padding: 20px;
+  }
+
+  .feedback-form .button {
+    justify-self: stretch;
+  }
+}

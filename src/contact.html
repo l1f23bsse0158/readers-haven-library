@@ -26,7 +26,48 @@
   <main>
     <section class="page-head container">
       <h1>Contact and feedback</h1>
-      <p>This page is being built.</p>
+      <p>Call during opening hours for renewals and room bookings. For anything else, email us or use the form. We reply within 2 working days.</p>
+    </section>
+
+    <figure class="page-photo container">
+      <img src="https://images.unsplash.com/photo-1682854494783-bd851a8c4c62?w=1600&q=80&auto=format&fit=crop" alt="The words Public Library in metal letters above the entrance of a white building" width="1600" height="1067">
+    </figure>
+
+    <section class="section container contact-layout">
+      <dl class="contact-list">
+        <div>
+          <dt>Address</dt>
+          <dd>22 Canal Bank Road, Gulberg, Lahore</dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+924235000000">042 3500 0000</a></dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:info@readershaven.example">info@readershaven.example</a></dd>
+        </div>
+        <div>
+          <dt>Help desk</dt>
+          <dd class="mono">Tue-Sat 09:00-20:00<br>Sun 10:00-16:00</dd>
+        </div>
+      </dl>
+
+      <form class="feedback-form" action="#" method="post">
+        <h2>Send feedback</h2>
+        <p class="form-note">Tell us about a book we should buy, a computer that is not working, or anything else. A staff member reads every message.</p>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button class="button" type="submit">Send feedback</button>
+      </form>
     </section>
   </main>
 
